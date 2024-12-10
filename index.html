@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Clicker 🍪</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #8b4513;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+        h1 {
+            margin: 20px 0;
+        }
+        #cookie-container {
+            margin: 20px auto;
+        }
+        #cookie-image {
+            width: 200px;
+            height: 200px;
+            cursor: pointer;
+            border: 5px solid #ffdab9;
+            border-radius: 50%;
+            box-shadow: 0 0 15px #ffdab9;
+        }
+        #cookie-count, #gold-count {
+            font-size: 1.5em;
+            margin-top: 10px;
+        }
+        button {
+            background-color: #ffa500;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #ff8c00;
+        }
+        hr {
+            border: 1px solid white;
+            margin: 20px auto;
+            width: 80%;
+        }
+        #message-box {
+            font-family: "Times New Roman", Times, serif;
+            background-color: #ffdab9;
+            color: #8b4513;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <h1>Cookie Clicker 🍪</h1>
+    <div id="cookie-container">
+        <img id="cookie-image" src="https://img.freepik.com/premium-photo/minimalist-cartoon-chocolate-chip-cookie-illustration_899449-56730.jpg" alt="Cookie">
+        <div id="cookie-count">Cookies: 0</div>
+        <div id="gold-count">Gold: 0 🪙</div>
+        <button onclick="giveCookie()">Click for Cookies</button>
+        <p>Earn 1 Gold 🪙 for every 10 Cookies 🍪!</p>
+    </div>
+    <hr>
+    <div id="message-box">
+        Hi, I'm Rithik. Thanks for the boba! In return, take a cookie and a bribe :)
+    </div>
+
+    <script>
+        let cookieCount = 0;
+        let goldCount = 0;
+
+        function giveCookie() {
+            cookieCount++;
+            document.getElementById('cookie-count').textContent = `Cookies: ${cookieCount}`;
+            if (cookieCount % 10 === 0) {
+                goldCount++;
+                document.getElementById('gold-count').textContent = `Gold: ${goldCount} 🪙`;
+            }
+        }
+
+        document.getElementById('cookie-image').addEventListener('click', giveCookie);
+    </script>
+</body>
+</html>
